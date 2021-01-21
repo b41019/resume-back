@@ -28,7 +28,8 @@
                 ?>
                 <tr>
                     <td >
-                        <textarea name="text[]" style="width:95%;height:60px"><?=$row['text'];?></textarea>
+                        <input type="text" name="text[]" style="width:95%;height:60px" value="<?=$row['text'];?>" >
+                        <!-- <textarea name="text[]" style="width:95%;height:60px"><?//=$row['text'];?></textarea> -->
                     </td>
                     <td ><input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>></td>
                     <td ><input type="checkbox" name="del[]" value="<?=$row['id'];?>"></td>

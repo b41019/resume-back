@@ -35,42 +35,36 @@
                     <!--主選單放此-->
                     <span class="t botli">後台管理選單</span>
                     <a style="color:#000; font-size:13px; text-decoration:none;"
-                        href="?do=title">
+                        href="?do=self">
                         <div class="mainmu">
-                            網站標題管理 </div>
+                           基本資料管理 </div>
                     </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=ad">
+                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=hshot">
                         <div class="mainmu">
-                            動態文字廣告管理 </div>
+                            頭貼照片管理 </div>
                     </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=mvim">
+                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=edu">
                         <div class="mainmu">
-                            動畫圖片管理 </div>
+                            學歷管理 </div>
                     </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=image">
+                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=auto">
                         <div class="mainmu">
-                            校園映象資料管理 </div>
+                            自傳管理 </div>
                     </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=total">
+                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=prof">
                         <div class="mainmu">
-                            進站總人數管理 </div>
+                            作品集管理 </div>
                     </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=bottom">
-                        <div class="mainmu">
-                            頁尾版權資料管理 </div>
-                    </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=news">
+                    
+                    <!-- <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=news">
                         <div class="mainmu">
                             最新消息資料管理 </div>
-                    </a>
+                    </a> -->
                     <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=admin">
                         <div class="mainmu">
                             管理者帳號管理 </div>
                     </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=self">
-                        <div class="mainmu">
-                            基本資料 </div>
-                    </a>
+                   
                     <!-- <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=menu">
                         <div class="mainmu">
                             選單管理 </div>
@@ -91,8 +85,10 @@
                             <td style="width:70%;font-weight:800; border:#333 1px solid; border-radius:3px;"
                                 class="cent"><a href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a>
                             </td>
-                            <td><button onclick="document.cookie=&#39;user=&#39;;location.replace(&#39;?&#39;)"
-                                    style="width:99%; margin-right:2px; height:50px;">管理登出</button></td>
+                            <td><button 
+                                    style="width:99%; margin-right:2px; height:50px;"> <a href="logout.php">管理登出</a> </button></td>
+                            <!-- <td><button onclick="document.cookie=&#39;user=&#39;;location.replace(&#39;?&#39;)"
+                                    style="width:99%; margin-right:2px; height:50px;">管理登出</button></td> -->
                         </tr>
                     </tbody>
                 </table>

@@ -35,6 +35,9 @@ foreach($_POST['id'] as $key => $id){
             case "title":
                 $row['sh']=($id==$_POST['sh'])?1:0;
             break;
+            case "hshot":
+                $row['sh']=($id==$_POST['sh'])?1:0;
+            break;
             case "total":
                 $row['total']=$_POST['total'];
             break;

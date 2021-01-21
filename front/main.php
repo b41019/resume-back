@@ -1,84 +1,44 @@
-<div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
-<?php include "marquee.php";?>
-                    <div style="height:32px; display:block;"></div>
-                                        <!--正中央-->
-
-                	<div style="width:100%; padding:2px; height:290px;">
-                    	<div id="mwww" loop="true" style="width:100%; height:100%;">
-							<div style="width:99%; height:100%; position:relative;" class="cent">沒有資料</div>
-
-                        </div>
-					</div>
-					<script>
-
-
-					var lin=new Array();
-
-					<?php
-						$str=[];
-						$mvims=$Mvim->all(['sh'=>1]);
-						foreach($mvims as $key => $mvim){
-							echo "lin.push('img/{$mvim['img']}')\n";
-						}
-					?>
-
-					var now=0;
-					
-					ww()
-					
-					if(lin.length>1)
-					{
-					setInterval("ww()",3000);
-					now=1;
-					}
-					function ww()
-					{
-					
-					$("#mwww").html("<embed loop=true src='"+lin[now]+"' style='width:99%; height:100%;'></embed>")
-					//$("#mwww").attr("src",lin[now])
-					now++;
-					if(now>=lin.length)
-					now=0;
-					}
-					</script>
-                	<div style="width:95%; padding:2px; height:190px; margin-top:10px; padding:5px 10px 5px 10px; border:#0C3 dashed 3px; position:relative;">
-                    		<span class="t botli">最新消息區
-							<?php
-							if($News->count(['sh'=>1])>5){
-							?>
-							<a href="?do=news" style='float:right'>More...</a>
-							<?php
-							}
-							?>
-						</span>
-							<ul class="ssaa" style="list-style-type:decimal;">
-								<?php
-									// $news=$News->all(["sh"=>1]);
-									$news=$News->all(["sh"=>1]," limit 5");
-									foreach($news as $key => $n){
-										echo "<li>".mb_substr($n['text'],0,25);
-										echo "<div class='all' style='display:none'>{$n['text']}</div>";
-										echo "</li>";
-									}
-								?>
-
-							</ul>
-					<div id="altt" style="position: absolute; width: 350px; min-height: 100px; background-color: rgb(255, 255, 204); top: 50px; left: 130px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
-                    	<script>
-						$(".ssaa li").hover(
-							function ()
-							{
-								$("#altt").html("<pre>"+$(this).children(".all").html()+"</pre>")
-								$("#altt").show()
-							}
-						)
-
-						$(".ssaa li").mouseout(
-							function()
-							{
-								$("#altt").hide()
-							}
-						) 
-                        </script>
-                    </div>
-                </div>
+<ol class="carousel-indicators">
+      <li data-target="#lokislider" data-slide-to="0" class="active"></li>
+      <li data-target="#lokislider" data-slide-to="1"></li>
+      <li data-target="#lokislider" data-slide-to="2"></li>
+      <li data-target="#lokislider" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item vh-100 active">
+        <img src="imgs/carousel_1.jpg" class="h-100 w-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center">
+          <h1>泰山渡假飯店 您的唯一首選</h1>
+          <p class="d-none d-md-block">忙碌的生活中，你有多久沒有好好的考賞自己呢？放慢腳步，來泰山好好度假吧</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="imgs/carousel_2.jpg" class="h-100 w-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center">
+          <h1>泰山咖啡廳 世界聞名而來</h1>
+          <p class="d-none d-md-block">泰山特產咖啡精選淬鍊而成，凡住宿者每人免費請你喝經典咖啡下午茶一份</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="imgs/carousel_3.jpg" class="h-100 w-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center">
+          <h1>寵愛有你 婚宴專案特惠</h1>
+          <p class="d-none d-md-block">本月活動喜宴專案滿10桌送一主桌，滿25桌再送沖繩雙人蜜月來回機票</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="imgs/carousel_4.jpg" class="h-100 w-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center">
+          <h1>外燴商餐 美食饗宴</h1>
+          <p class="d-none d-md-block">全台最豐富的國內外文化餐飲美食，與先進的視聽投影設備與企劃小組，歡迎商約洽談</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#lokislider" data-slide="prev">
+      <!-- <i class="fas fa-flushed fa-2x"></i> -->
+      <i class="fas fa-chevron-circle-left fa-2x"></i>
+    </a>
+    <a class="carousel-control-next" href="#lokislider" data-slide="next">
+      <!-- <i class="fas fa-flushed fa-2x"></i> -->
+      <i class="fas fa-chevron-circle-right fa-2x"></i>
+    </a>
