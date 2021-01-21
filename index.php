@@ -26,6 +26,7 @@ include_once "base.php";
       display: flex;
       justify-content: center;
     }
+
     .intro-box a {
       color: orange;
       margin: 0rem 0.5rem;
@@ -59,15 +60,15 @@ include_once "base.php";
           <li class="nav-item active">
             <a class="nav-link" href="#self"><i class="fas fa-user mr-2"></i>自我介紹</a>
           </li>
-          
+
           <!-- <li class="nav-item"> -->
-            <!-- <a class="nav-link" href="#self"><i class="fas fa-graduation-cap mr-2"></i>學業經歷</a> -->
+          <!-- <a class="nav-link" href="#self"><i class="fas fa-graduation-cap mr-2"></i>學業經歷</a> -->
           <!-- </li> -->
           <!-- <li class="nav-item"> -->
-            <!-- <a class="nav-link" href="#self"><i class="fas fa-chart-bar mr-2"></i>專業技能</a> -->
+          <!-- <a class="nav-link" href="#self"><i class="fas fa-chart-bar mr-2"></i>專業技能</a> -->
           <!-- </li> -->
           <!-- <li class="nav-item"> -->
-            <!-- <a class="nav-link" href="#self"><i class="fas fa-list-ul mr-2"></i>作品一覽</a> -->
+          <!-- <a class="nav-link" href="#self"><i class="fas fa-list-ul mr-2"></i>作品一覽</a> -->
           <!-- </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#linkme"><i class="fas fa-envelope mr-2"></i>聯絡我</a>
@@ -83,32 +84,29 @@ include_once "base.php";
 
   <section id="lokislider" class="carousel slide" data-ride="carousel">
 
-  <?php
-				
-        $do=(isset($_GET['do']))?$_GET['do']:'main';
-        $file="./front/".$do.".php";
-        if(file_exists($file)){
-          include $file;
-        }else{
-          include "./front/main.php";
-        }
+    <?php
 
-      
-      ;?>
+    $do = (isset($_GET['do'])) ? $_GET['do'] : 'main';
+    $file = "./front/" . $do . ".php";
+    if (file_exists($file)) {
+      include $file;
+    } else {
+      include "./front/main.php";
+    }; ?>
 
 
 
 
 
 
-    
+
   </section>
 
-  
+
 
   <!--  -->
 
- 
+
 
 
   <section id="lokiroom" class="container py-5">
@@ -116,7 +114,7 @@ include_once "base.php";
       <h2 class="text-info pb-3">我的履歷</h2>
       <nav class="nav nav-tabs justify-content-around">
         <a class="nav-item nav-link alert-info text-white active" data-toggle="tab" href="#self"><i class="fas fa-user mr-2"></i>自我介紹</a>
-        <a class="nav-item nav-link alert-info text-white" data-toggle="tab" href="#edu"><i class="fas fa-graduation-cap mr-2"></i>學歷</a>
+        <a class="nav-item nav-link alert-info text-white" data-toggle="tab" href="#edu"><i class="fas fa-graduation-cap mr-2"></i>學歷/求職</a>
         <!-- <a class="nav-item nav-link alert-info text-white" data-toggle="tab" href="#edu">學歷與證照</a> -->
         <a class="nav-item nav-link alert-info text-white" data-toggle="tab" href="#skill"><i class="fas fa-chart-bar mr-2"></i>專業技能</a>
         <a class="nav-item nav-link alert-info text-white" data-toggle="tab" href="#prof"><i class="fas fa-list-ul mr-2"></i>作品欄</a>
@@ -182,30 +180,56 @@ include_once "base.php";
             </tbody>
           </table>
         </div>
+        <div class="mb-5">
+          <h5 class="text-info">[ 應徵條件 ]</h5>
+          <table class="table table-sm text-center">
+            <thead>
+              <tr class="alert-info">
+                <th class="border-info">應徵職務</th>
+                <th class="border-info">期望薪資</th>
+                <th class="border-info">工作地區</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              $job = $Job->all(['sh' => 1]);
+              foreach ($job as $j) {
+              ?>
+                <tr>
+                  <th><?= $j['job']; ?> </th>
+                  <td><?= $j['pay']; ?></td>
+                  <td><?= $j['lo']; ?></td>
+                </tr>
+              <?php
+              }
+              ?>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="row tab-pane fade" id="skill">
         <!-- row>col content C-->
         <div class="skill">
-        <li>
+          <li>
             <h5>HTML</h5>
             <span class="bar"><span class="html"></span></span>
-        </li>
-        <li>
+          </li>
+          <li>
             <h5>CSS</h5>
             <span class="bar"><span class="css"></span></span>
-        </li>
-        <li>
+          </li>
+          <li>
             <h5>JS</h5>
             <span class="bar"><span class="js"></span></span>
-        </li>
-        
-        <li>
+          </li>
+
+          <li>
             <h5>PHP</h5>
             <span class="bar"><span class="php"></span></span>
-        </li>
-        
-    </div>
+          </li>
+
+        </div>
       </div>
 
 

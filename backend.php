@@ -56,10 +56,10 @@
                             作品集管理 </div>
                     </a>
                     
-                    <!-- <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=news">
+                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=job">
                         <div class="mainmu">
-                            最新消息資料管理 </div>
-                    </a> -->
+                            應徵條件管理 </div>
+                    </a>
                     <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=admin">
                         <div class="mainmu">
                             管理者帳號管理 </div>
